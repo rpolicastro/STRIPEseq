@@ -40,7 +40,8 @@ def star_align(self, seqDir):
 			'--runThreadN', str(self.threads),
 			'--genomeDir', os.path.join(self.outdir, 'genome'),
 			'--outFileNamePrefix', os.path.join(self.outdir, 'aligned', row['sample_ID'] + '_' + row['condition'] + '_' + row['replicate'] + '_'),
-			'--outSAMtype BAM SortedByCoordinate',
+			'--outSAMtype BAM Unsorted',
+			'--clip5pNbases 15 0',
 			'--readFilesIn', os.path.join(self.seqdir, row['R1'])
 		]
 		if row['paired'].lower() == 'paired': command.append(os.path.join(self.seqdir, row['R2'])
