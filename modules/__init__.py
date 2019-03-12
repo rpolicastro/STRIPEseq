@@ -19,3 +19,4 @@ class STRIPEseq(object):
 	from ._fastqc import fastqc
 	from ._star import star_genome, star_align
 	from ._samtools import process_bams
+	from ._subread import count_reads
