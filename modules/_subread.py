@@ -29,3 +29,16 @@ def count_reads(self):
 
 	# run counting command
 	self.sample_sheet.apply(_count, axis=1)
+
+	# combine results files
+	count_files = [f for f in os.listdir(self.outdir, 'counts') if f.endswith('_counts.tsv')]
+	index = 1
+	for count_file in count_files:
+		df = pandas.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=0)
+		if index == 1:
+			master = df
+			index += 1
+		else:
+			master.join(df, how='outer', sort=True)
+			index += 1
+	master.to_csv(os.path.join(self.outdir, 'counts', 'merged_counts.tsv'), sep='\t', header=True, index=True, quoting=csv.QUOTE_NONE)
