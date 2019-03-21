@@ -1,7 +1,7 @@
 
 import os
 import subprocess
-import pandas
+import pandas as pd
 
 class STRIPEseq(object):
 
