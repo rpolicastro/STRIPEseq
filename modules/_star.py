@@ -43,7 +43,7 @@ def star_align(self):
 			'STAR',
 			'--runThreadN', str(self.cores),
 			'--genomeDir', os.path.join(self.outdir, 'genome'),
-			'--outFileNamePrefix', os.path.join(self.outdir, 'aligned', row['sample_ID'] + '_' + row['condition'] + '_' + row['replicate'] + '_'),
+			'--outFileNamePrefix', os.path.join(self.outdir, 'aligned', row['sample_ID'] + '_' + row['condition'] + '_' + str(row['replicate']) + '_'),
 			'--outSAMtype BAM Unsorted',
 			'--clip5pNbases 15 0',
 			'--readFilesIn', os.path.join(self.seqdir, row['R1'])
