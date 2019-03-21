@@ -14,7 +14,7 @@ def fastqc(self):
 	# start compiling fastq command
 	fastq_files = self.sample_sheet.loc[:,['R1','R2']].melt().set_index('variable').dropna().value.tolist()
 	fastq_files = [os.path.join(self.seqdir, fastq) for fastq in fastq_files]
-	' '.join(fastq_files)	
+	fastq_files = ' '.join(fastq_files)	
 
 	command = [
 		'fastqc',
