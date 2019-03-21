@@ -41,7 +41,7 @@ def star_align(self):
 		# making command
 		command = [
 			'STAR',
-			'--runThreadN', str(self.threads),
+			'--runThreadN', str(self.cores),
 			'--genomeDir', os.path.join(self.outdir, 'genome'),
 			'--outFileNamePrefix', os.path.join(self.outdir, 'aligned', row['sample_ID'] + '_' + row['condition'] + '_' + row['replicate'] + '_'),
 			'--outSAMtype BAM Unsorted',
