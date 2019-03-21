@@ -18,7 +18,7 @@ def star_genome(self, genomeGTF, genomeFasta):
 		'--genomeFastaFiles', self.genome_fasta,
 		'--sjdbGTFfile', self.genome_gtf
 	]
-	command = ' ',join(command)
+	command = ' '.join(command)
 
 	# submitting command
 	subprocess.run(command, shell=True, check=True)
@@ -44,7 +44,7 @@ def star_align(self):
 			'--clip5pNbases 15 0',
 			'--readFilesIn', os.path.join(self.seqdir, row['R1'])
 		]
-		if row['paired'].lower() == 'paired': command.append(os.path.join(self.seqdir, row['R2'])
+		if row['paired'].lower() == 'paired': command.append(os.path.join(self.seqdir, row['R2']))
 		command = ' '.join(command)
 
 		# running command

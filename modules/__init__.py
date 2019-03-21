@@ -5,7 +5,7 @@ import pandas
 
 class STRIPEseq(object):
 
-	def __init__(self, projectID, projectName, organism, cores=1, outDir=None, seqDir):
+	def __init__(self, projectID, projectName, organism, seqDir, cores=1, outDir=None):
 		self.project_id = projectID
 		self.project_name = projectName
 		self.organism = organism
