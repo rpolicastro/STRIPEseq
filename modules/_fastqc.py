@@ -12,7 +12,7 @@ def fastqc(self):
 	if not os.path.isdir(outdir): os.mkdir(outdir)
 	
 	# start compiling fastq command
-	fastq_files = samples.loc[:,['R1','R2']].melt().set_index('variable').dropna().value.tolist()
+	fastq_files = self.sample_sheet.loc[:,['R1','R2']].melt().set_index('variable').dropna().value.tolist()
 	fastq_files = [os.path.join(self.outdir, fastq) for fastq in fastq_files]
 	' '.join(fastq_files)	
 
