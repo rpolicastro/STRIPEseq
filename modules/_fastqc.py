@@ -22,7 +22,7 @@ def fastqc(self):
 		'-t', str(self.cores),
 		fastq_files
 	]
-	command = ' '.join(fastq_files)
+	command = ' '.join(command)
 
 	# run command
 	subprocess.run(command, shell=True, check=True)
