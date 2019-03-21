@@ -55,4 +55,4 @@ def star_align(self):
 		subprocess.run(command, shell=True, check=True)
 
 	# looping through fastq files and aligning them
-	self.sample_sheet.apply(_align, axis=1)
+	self.sample_sheet.apply(lambda x: _align(row=x), axis=1)
