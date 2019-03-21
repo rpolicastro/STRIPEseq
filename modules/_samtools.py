@@ -15,5 +15,6 @@ def process_bams(self):
 			'samtools markdup - - |',
 			'samtools view -F 3852 -f 3 -O BAM -@', str(self.threads), '-o', os.path.join(self.outdir, 'results', 'aligned', bam_name)
 		]
+		command = ' '.join(command)
 		# submit samtools command
 		subprocess(command, shell=True, check=True)

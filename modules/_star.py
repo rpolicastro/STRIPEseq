@@ -25,7 +25,7 @@ def star_genome(self, genomeGTF, genomeFasta):
 
 ## aligning reads using STAR
 
-def star_align(self, seqDir):
+def star_align(self):
 
 	# creatig directory for aligned files
 	outdir = os.path.join(self.outdir, 'aligned')

@@ -10,7 +10,6 @@ class STRIPEseq(object):
 		self.project_name = projectName
 		self.organism = organism
 		self.cores = cores
-		self.paired = paired
 		self.seqdir = seqDir
 		self.outdir = outDir
 		if not self.outdir: self.outdir = os.getcwd()
