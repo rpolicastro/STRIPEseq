@@ -1,4 +1,8 @@
 
+import os
+import subprocess
+import pandas as pd
+
 ## fastqc for read quality control
 
 def fastqc(self):

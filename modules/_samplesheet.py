@@ -1,4 +1,6 @@
 
+import pandas as pd
+
 ## loading up sample sheet
 
 def sample_sheet(self, sampleSheet):

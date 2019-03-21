@@ -1,4 +1,8 @@
 
+import pandas as pd
+import os
+import subprocess
+
 ## generating STAR genomic index
 
 def star_genome(self, genomeGTF, genomeFasta):

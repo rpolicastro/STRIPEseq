@@ -1,4 +1,7 @@
 
+import subprocess
+import os
+
 def process_bams(self):
 
 	# get list of bam files
