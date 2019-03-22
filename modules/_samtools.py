@@ -18,7 +18,7 @@ def process_bams(self):
 			'samtools fixmate - - |',
 			'samtools sort -@', str(self.cores), '- |',
 			'samtools markdup - - |',
-			'samtools view -F 3852 -f 3 -O BAM -@', str(self.cores), '-o', os.path.join(self.outdir, 'results', 'aligned', bam_name)
+			'samtools view -F 3852 -f 3 -O BAM -@', str(self.cores), '-o', os.path.join(self.outdir, 'aligned', bam_name)
 		]
 		command = ' '.join(command)
 		# submit samtools command
