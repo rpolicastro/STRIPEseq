@@ -9,7 +9,7 @@ def process_bams(self):
 	for bam in bams:
 		# prepare cleaned bam output name
 		bam_name = os.path.basename(bam)
-		bam_name = ps.path.splitext(bam_name)[0] + '_cleaned.bam'
+		bam_name = os.path.splitext(bam_name)[0] + '_cleaned.bam'
 		# build samtools command
 		command = [
 			'samtools sort -n -@', str(self.cores), bam, '|',
