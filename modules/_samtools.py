@@ -4,6 +4,7 @@ import os
 
 def process_bams(self):
 
+	os.chdir(os.path.join(self.outdir, 'aligned'))
 	# get list of bam files
 	bams = [file for file in os.listdir(os.path.join(self.outdir, 'aligned')) if file.endswith('.bam')]
 	bams = [os.path.join(self.outdir, 'aligned', b) for b in bams]
