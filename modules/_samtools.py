@@ -12,11 +12,11 @@ def process_bams(self):
 		bam_name = ps.path.splitext(bam_name)[0] + '_cleaned.bam'
 		# build samtools command
 		command = [
-			'samtools sort -n -@', str(self.threads), bam, '|',
+			'samtools sort -n -@', str(self.cores), bam, '|',
 			'samtools fixmate - - |',
-			'samtools sort -@', str(self.threads), '- |',
+			'samtools sort -@', str(self.cores), '- |',
 			'samtools markdup - - |',
-			'samtools view -F 3852 -f 3 -O BAM -@', str(self.threads), '-o', os.path.join(self.outdir, 'results', 'aligned', bam_name)
+			'samtools view -F 3852 -f 3 -O BAM -@', str(self.cores), '-o', os.path.join(self.outdir, 'results', 'aligned', bam_name)
 		]
 		command = ' '.join(command)
 		# submit samtools command
