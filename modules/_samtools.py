@@ -20,4 +20,4 @@ def process_bams(self):
 		]
 		command = ' '.join(command)
 		# submit samtools command
-		subprocess(command, shell=True, check=True)
+		subprocess.run(command, shell=True, check=True)
