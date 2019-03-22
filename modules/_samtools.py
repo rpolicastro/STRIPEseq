@@ -6,6 +6,7 @@ def process_bams(self):
 
 	# get list of bam files
 	bams = [file for file in os.listdir(os.path.join(self.outdir, 'aligned')) if file.endswith('.bam')]
+	bams = [os.path.join(self.outdir, 'aligned', b) for b in bams]
 	for bam in bams:
 		# prepare cleaned bam output name
 		bam_name = os.path.basename(bam)
