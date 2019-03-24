@@ -2,7 +2,11 @@ import subprocess
 import os
 import pandas as pd
 
-def count_reads(self):
+def count_reads(self, genomeGTF=None, genomeFasta=None):
+
+	# set genome GTF and Fasta if defined
+	if genomeGTF is not None: self.genome_gtf = genomeGTF
+	if genomeFsata is not None: self.genome_fasta = genomeFasta
 
 	# create output directory if it doesn't exist
 	outdir = os.path.join(self.outdir, 'counts')
