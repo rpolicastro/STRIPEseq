@@ -48,4 +48,4 @@ def count_reads(self, genomeGTF=None, genomeFasta=None):
 		else:
 			master.join(df, how='outer')
 			index += 1
-	master.to_csv(os.path.join(self.outdir, 'counts', 'merged_counts.tsv'), sep='\t', header=True, index=True, quoting=csv.QUOTE_NONE)
+	master.to_csv(os.path.join(self.outdir, 'counts', 'merged_counts.tsv'), sep='\t', header=True, index=True)
