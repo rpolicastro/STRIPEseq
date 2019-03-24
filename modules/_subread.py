@@ -1,4 +1,6 @@
-
+import subprocess
+import os
+import pandas as pd
 
 def count_reads(self):
 
