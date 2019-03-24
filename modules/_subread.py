@@ -40,7 +40,8 @@ def count_reads(self, genomeGTF=None, genomeFasta=None):
 	count_files = [f for f in os.listdir(os.path.join(self.outdir, 'counts')) if f.endswith('_counts.tsv')]
 	index = 1
 	for count_file in count_files:
-		df = pd.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=0)
+		df = pd.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=0, skiprows = 1)
+		df = df.iloc[:6]
 		if index == 1:
 			master = df
 			index += 1
