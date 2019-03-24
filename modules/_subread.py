@@ -37,7 +37,7 @@ def count_reads(self, genomeGTF=None, genomeFasta=None):
 	self.sample_sheet.apply(lambda row: _count(self=self, row=row), axis=1)
 
 	# combine results files
-	count_files = [f for f in os.listdir(self.outdir, 'counts') if f.endswith('_counts.tsv')]
+	count_files = [f for f in os.listdir(os.path.join(self.outdir, 'counts')) if f.endswith('_counts.tsv')]
 	index = 1
 	for count_file in count_files:
 		df = pandas.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=0)
