@@ -32,7 +32,7 @@ def count_reads(self, genomeGTF=None, genomeFasta=None):
 		subprocess.run(command, shell=True, check=True)
 
 	# run counting command
-	self.sample_sheet.apply(_count, axis=1, lambda row: _count(self=self, row=row))
+	self.sample_sheet.apply(lambda row: _count(self=self, row=row), axis=1)
 
 	# combine results files
 	count_files = [f for f in os.listdir(self.outdir, 'counts') if f.endswith('_counts.tsv')]
