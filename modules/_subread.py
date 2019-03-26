@@ -41,11 +41,12 @@ def count_reads(self, genomeGTF=None, genomeFasta=None):
 	count_files = [f for f in os.listdir(os.path.join(self.outdir, 'counts')) if f.endswith('_counts.tsv')]
 	master_created = False
 	for count_file in count_files:
-		df = pd.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=False, skiprows = 1)
-		df = df.iloc[:,[0,6]]
+		df = pd.read_csv(os.path.join(self.outdir, 'counts', count_file), sep='\t', header=0, index_col=0, skiprows = 1)
+		df = df.iloc[:,5].to_frame()
+		df.iloc[:,0] = pd.to_numeric(df.iloc[:,0])
 		if not master_created:
 			master = df
 			master_created = True
 		else:
-			master.join(df, how='outer', on='Geneid')
+			master = master.join(df, how='outer')
 	master.to_csv(os.path.join(self.outdir, 'counts', 'merged_counts.tsv'), sep='\t', header=True, index=True, quoting=csv.QUOTE_NONE)
