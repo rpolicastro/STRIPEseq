@@ -1,0 +1,4 @@
+sample_ID	condition	replicate	R1	R2	paired
+S288C	WT	1	Sample-01_R1.fastq	Sample-01_R2.fastq	paired
+S288C	WT	2	Sample-02_R1.fastq	Sample-02_R2.fastq	paired
+S288C	WT	3	Sample-03_R1.fastq	Sample-03_R2.fastq	paired
